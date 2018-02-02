@@ -1,0 +1,7 @@
+C:\common\C# projects\WebTest\WebTest\obj\Debug\WebTest.csprojResolveAssemblyReference.cache
+C:\common\C# projects\WebTest\WebTest\obj\Debug\WebTest.csproj.CoreCompileInputs.cache
+C:\common\C# projects\WebTest\WebTest\bin\Debug\WebTest.exe.config
+C:\common\C# projects\WebTest\WebTest\bin\Debug\WebTest.exe
+C:\common\C# projects\WebTest\WebTest\bin\Debug\WebTest.pdb
+C:\common\C# projects\WebTest\WebTest\obj\Debug\WebTest.exe
+C:\common\C# projects\WebTest\WebTest\obj\Debug\WebTest.pdb
