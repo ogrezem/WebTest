@@ -55,7 +55,7 @@ namespace WebTest {
 			HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create(reference);
 			HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
 			using (StreamReader reader = new StreamReader(resp.GetResponseStream(), Encoding.UTF8)) {
-				return reader.ReadToEnd();
+				return reader.ReadToEnd();//
 			}
 		}
 	}
