@@ -5,3 +5,5 @@ C:\common\C# projects\WebTest\WebTest\bin\Debug\WebTest.exe
 C:\common\C# projects\WebTest\WebTest\bin\Debug\WebTest.pdb
 C:\common\C# projects\WebTest\WebTest\obj\Debug\WebTest.exe
 C:\common\C# projects\WebTest\WebTest\obj\Debug\WebTest.pdb
+C:\common\C# projects\WebTest\WebTest\bin\Debug\AngleSharp.dll
+C:\common\C# projects\WebTest\WebTest\bin\Debug\AngleSharp.xml

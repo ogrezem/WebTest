@@ -6,32 +6,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AngleSharp;
+using AngleSharp.Parser.Html;
 
 namespace WebTest {
 	class Program {
 		static void Main(string[] args) {
 			while (true) {
-				string input;
 				ToStart:
 				Console.Write("Введите команду: ");
 				string cmd = Console.ReadLine();
 				switch (cmd) {
 					case "узнать":
 						Console.Write("Введите слово в словарной форме: ");
-						input = Console.ReadLine();
+						string input = Console.ReadLine();
 						string reference = "https://www.online-latin-dictionary.com/latin-english-dictionary.php?parola=" + input;
+						var parser = new HtmlParser();
+						var document = parser.Parse(GetHtml(reference)); //
+						var ddd = from el in document.All
+								  where el.LocalName == "span" && el.ClassName == "lemma"
+								  select el.TextContent;
+						var values = from v in document.All
+									 where v.LocalName == "span" && v.ClassName == "english"
+									 select v.TextContent;
 						try {
-							HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create(reference);
-							HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
-							using (StreamReader reader = new StreamReader(resp.GetResponseStream(), Encoding.UTF8)) {
-								string zapr = reader.ReadToEnd();
-								Console.WriteLine(GetPeace(zapr, "<div id=\"myth\">", "<a href=\"/latin-english-dictionary.php?"));
-							}
-						} catch (Exception ex) {
-							Console.WriteLine("Скорее всего, было введено неверное слово");
-							Console.WriteLine(ex.StackTrace);
-							Console.WriteLine(ex.Message);
-							continue;
+							Console.WriteLine(ddd.ElementAt(0));
+						} catch (ArgumentOutOfRangeException ex) {
+							Console.WriteLine("Неверно введено слово");
+							goto ToStart;
+						}
+						for (int i = 1; i <= values.Count(); i++) {
+							Console.WriteLine(i + ". " + values.ElementAt(i-1));
 						}
 						break;
 					case "выйти":

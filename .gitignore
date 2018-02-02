@@ -1,0 +1,8 @@
+
+*.pdb
+*.pdb
+bin/Debug/AngleSharp.xml
+obj/Debug/WebTest.exe
+obj/Debug/WebTest.pdb
+*.exe
+bin/Debug/WebTest.pdb
